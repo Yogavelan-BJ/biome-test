@@ -1,0 +1,23 @@
+name: Biome Format Check
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  check-format:
+    runs-on: ubuntu-latest
+    name: Check Biome Formatting
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Biome format check
+        run: npx @biomejs/biome format . --check
