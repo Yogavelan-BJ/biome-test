@@ -20,4 +20,4 @@ jobs:
           node-version: 20
 
       - name: Run Biome format check
-        run: npx @biomejs/biome format . --check
+        run: npx @biomejs/biome check .

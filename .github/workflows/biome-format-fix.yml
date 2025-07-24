@@ -29,7 +29,7 @@ jobs:
 
           if [[ -n $(git status --porcelain) ]]; then
             git add .
-            git commit -m "chore: apply Biome formatting"
+            git commit -m "Biome auto-formatting"
             git push
           else
             echo "No formatting changes needed."
